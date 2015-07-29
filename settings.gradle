@@ -1,1 +1,1 @@
-include ':app',':squarecamera'
+include ':app',':squarecamera',':smart-location-lib'
