@@ -79,7 +79,7 @@ public class SmartLocationActivity extends AppCompatActivity {
     private class myLocationListerner implements LocationListener {
         @Override
         public void onLocationChanged(Location location) {
-            String text = showLocation(location);
+            showLocation(location);
         }
 
         @Override
