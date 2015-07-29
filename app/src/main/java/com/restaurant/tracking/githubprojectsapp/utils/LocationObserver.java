@@ -2,6 +2,8 @@ package com.restaurant.tracking.githubprojectsapp.utils;
 
 import android.content.Context;
 import android.location.Location;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.google.android.gms.location.DetectedActivity;
 
@@ -14,14 +16,13 @@ import io.nlopez.smartlocation.utils.Logger;
 /**
  * Created by djzhang on 7/29/15.
  */
-public class LocationObserver implements OnLocationUpdatedListener, OnActivityUpdatedListener {
+public class LocationObserver extends AppCompatActivity implements OnLocationUpdatedListener, OnActivityUpdatedListener {
 
     private LocationGooglePlayServicesProvider provider;
 
-    private Context context;
-
-    public LocationObserver(Context context) {
-        this.context = context;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
     public void startLocation() {
@@ -29,7 +30,7 @@ public class LocationObserver implements OnLocationUpdatedListener, OnActivityUp
         provider = new LocationGooglePlayServicesProvider();
         provider.setCheckLocationSettings(true);
 
-        SmartLocation smartLocation = new SmartLocation.Builder(this.context).logging(true).build();
+        SmartLocation smartLocation = new SmartLocation.Builder(this).logging(true).build();
 
         smartLocation.location().provider(provider).start(this);
         smartLocation.activity().start(this);
@@ -37,9 +38,9 @@ public class LocationObserver implements OnLocationUpdatedListener, OnActivityUp
 
 
     public void stopLocation() {
-        SmartLocation.with(this.context).location().stop();
+        SmartLocation.with(this).location().stop();
 
-        SmartLocation.with(this.context).activity().stop();
+        SmartLocation.with(this).activity().stop();
     }
 
 
