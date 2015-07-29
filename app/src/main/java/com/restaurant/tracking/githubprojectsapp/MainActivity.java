@@ -1,8 +1,6 @@
 package com.restaurant.tracking.githubprojectsapp;
 
 import android.content.Intent;
-import android.hardware.Camera;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
