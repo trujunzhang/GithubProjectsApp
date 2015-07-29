@@ -46,7 +46,7 @@ public class LocationObserver extends AppCompatActivity implements OnLocationUpd
 
     @Override
     public void onLocationUpdated(Location location) {
-        this.showLocation(location);
+//        this.showLocation(location);
     }
 
     @Override
@@ -55,17 +55,6 @@ public class LocationObserver extends AppCompatActivity implements OnLocationUpd
     }
 
 
-    public String showLocation(Location location) {
-        if (location != null) {
-            final String text = String.format("Latitude %.6f, Longitude %.6f",
-                    location.getLatitude(),
-                    location.getLongitude());
-            return text;
-        } else {
-//            locationText.setText("Null location");
-        }
 
-        return "not found location";
-    }
 
 }
