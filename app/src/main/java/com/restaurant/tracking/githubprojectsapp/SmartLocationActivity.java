@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.restaurant.tracking.githubprojectsapp.utils.LocationObserver;
 
 import io.nlopez.smartlocation.SmartLocation;
+import pl.charmas.android.reactivelocation.ReactiveLocationProvider;
+import rx.functions.Action1;
 
 /**
  * Created by djzhang on 7/29/15.
@@ -30,26 +32,25 @@ public class SmartLocationActivity extends LocationObserver {
         locationText = (TextView) findViewById(R.id.location_text);
         button2 = (Button) findViewById(R.id.button2);
 
+//        this.startLocation();
 
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showLast();
-            }
-        });
+//        button2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//            }
+//        });
 
+
+        ReactiveLocationProvider locationProvider = new ReactiveLocationProvider(this);
+        locationProvider.getLastKnownLocation()
+                .subscribe(new Action1<Location>() {
+                    @Override
+                    public void call(Location location) {
+                        String text = showLocation(location);
+                        locationText.setText(text);
+                    }
+                });
     }
 
 
-    private void showLast() {
-        Location lastLocation = SmartLocation.with(this).location().getLastLocation();
-        if (lastLocation != null) {
-            locationText.setText(
-                    String.format("[From Cache] Latitude %.6f, Longitude %.6f",
-                            lastLocation.getLatitude(),
-                            lastLocation.getLongitude())
-            );
-        }
-
-    }
 }

@@ -44,4 +44,5 @@ dependencies {
     //    compile 'com.vincentbrison.openlibraries.android:dualcache:2.1.0@jar'
     compile project(':smart-location-lib')
     compile project(':squarecamera')
+    compile 'pl.charmas.android:android-reactive-location:0.7'
 }
