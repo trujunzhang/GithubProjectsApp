@@ -11,16 +11,15 @@ import io.nlopez.smartlocation.SmartLocation;
  * Created by djzhang on 7/29/15.
  */
 public class SmartLocationActivity extends AppCompatActivity {
+    private LocationObserver locationObserver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SmartLocation.with(this).location().start(new OnLocationUpdatedListener() {
-            @Override
-            public void onLocationUpdated(Location location) {
-                double latitude = location.getLatitude();
-                double longitude = location.getLongitude();
-            }
-        });
+        locationObserver = new LocationObserver(this);
+
+        locationObserver.startLocation();
+
     }
 }
