@@ -10,7 +10,7 @@ import io.nlopez.smartlocation.SmartLocation;
 /**
  * Created by djzhang on 7/29/15.
  */
-public class SmartLocationActivity extends AppCompatActivity{
+public class SmartLocationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
