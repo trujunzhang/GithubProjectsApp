@@ -18,7 +18,8 @@ public class SmartLocationActivity extends AppCompatActivity{
         SmartLocation.with(this).location().start(new OnLocationUpdatedListener() {
             @Override
             public void onLocationUpdated(Location location) {
-
+                double latitude = location.getLatitude();
+                double longitude = location.getLongitude();
             }
         });
     }
