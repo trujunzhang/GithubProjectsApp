@@ -25,6 +25,9 @@ public class SmartLocationActivity extends AppCompatActivity {
     private TextView locationText;
     private Button button2;
 
+    LocationManager mlocManager;
+    LocationListener mlocListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,24 +46,23 @@ public class SmartLocationActivity extends AppCompatActivity {
             }
         });
 
-        LocationManager lm = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-        LocationListener ll = new myLocationListerner();
-        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, ll);
+        mlocManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+        this.mlocListener = new myLocationListerner();
 
     }
 
+    @Override
+    public void onResume() {
+        mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 100, this.mlocListener);
+        super.onResume();
+    }
 
-//    private void showLast() {
-//        Location lastLocation = SmartLocation.with(this).location().getLastLocation();
-//        if (lastLocation != null) {
-//            locationText.setText(
-//                    String.format("[From Cache] Latitude %.6f, Longitude %.6f",
-//                            lastLocation.getLatitude(),
-//                            lastLocation.getLongitude())
-//            );
-//        }
-//
-//    }
+    @Override
+    public void onPause() {
+        mlocManager.removeUpdates(mlocListener);
+        super.onPause();
+    }
+
 
     public String showLocation(Location location) {
         if (location != null) {
@@ -69,8 +71,6 @@ public class SmartLocationActivity extends AppCompatActivity {
                     location.getLongitude());
             locationText.setText(text);
             return text;
-        } else {
-//            locationText.setText("Null location");
         }
 
         return "not found location";
