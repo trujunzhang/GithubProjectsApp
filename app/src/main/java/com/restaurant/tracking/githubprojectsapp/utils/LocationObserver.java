@@ -16,8 +16,9 @@ public class LocationObserver extends AppCompatActivity {
 
     protected TextView _locationText;
 
-    LocationManager mlocManager;
-    LocationListener mlocListener;
+    private LocationManager mlocManager;
+    private LocationListener mlocListener;
+    private Location location;
 
 
     @Override
@@ -67,6 +68,7 @@ public class LocationObserver extends AppCompatActivity {
 
 
     public String showLocation(Location location) {
+        this.location = location;
         if (location != null) {
             final String text = String.format("Latitude %.6f, Longitude %.6f",
                     location.getLatitude(),
