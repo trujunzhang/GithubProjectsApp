@@ -1,4 +1,4 @@
-package com.restaurant.tracking.githubprojectsapp;
+package com.restaurant.tracking.githubprojectsapp.utils;
 
 /**
  * Created by djzhang on 7/20/15.

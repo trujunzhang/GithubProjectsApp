@@ -1,4 +1,4 @@
-package com.restaurant.tracking.githubprojectsapp;
+package com.restaurant.tracking.githubprojectsapp.widgets;
 
 
 import java.util.Calendar;
@@ -16,6 +16,8 @@ import android.widget.DatePicker;
 import android.widget.DatePicker.OnDateChangedListener;
 import android.widget.TimePicker;
 import android.widget.TimePicker.OnTimeChangedListener;
+
+import com.restaurant.tracking.githubprojectsapp.R;
 
 
 public class DateTimePickerDialog extends AlertDialog implements OnClickListener, OnDateChangedListener, OnTimeChangedListener {

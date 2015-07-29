@@ -1,4 +1,4 @@
-package com.restaurant.tracking.githubprojectsapp;
+package com.restaurant.tracking.githubprojectsapp.utils;
 
 import android.content.Context;
 import android.location.Location;
