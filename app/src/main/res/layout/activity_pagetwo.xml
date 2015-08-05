@@ -10,10 +10,9 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="show page two" />
+        android:text="back to page one" />
 
     <TextView
-        android:layout_marginTop="32.0dip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
