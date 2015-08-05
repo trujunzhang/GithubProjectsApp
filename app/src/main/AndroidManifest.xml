@@ -57,20 +57,20 @@
         </activity>
 
         <activity android:name=".eventbus.PageOneActivity">
-            <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.MAIN" />-->
-
-            <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        </activity>
-        <activity android:name=".eventbus.PageTwoActivity"></activity>
-
-        <activity android:name=".eventbus.EventBusDemoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".eventbus.PageTwoActivity"></activity>
+
+        <activity android:name=".eventbus.EventBusDemoActivity">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
 
     </application>
