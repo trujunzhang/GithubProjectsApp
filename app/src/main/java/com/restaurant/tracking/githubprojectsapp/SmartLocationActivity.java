@@ -1,6 +1,5 @@
 package com.restaurant.tracking.githubprojectsapp;
 
-import android.location.Location;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;

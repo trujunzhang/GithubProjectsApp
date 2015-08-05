@@ -1,14 +1,15 @@
 package com.restaurant.tracking.githubprojectsapp.eventbus;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 /**
  * Created by djzhang on 8/5/15.
  */
-public class PageTwoActivity extends TaskActivity {
+public class PageTwoActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
