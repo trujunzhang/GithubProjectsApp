@@ -9,7 +9,7 @@ import com.restaurant.tracking.githubprojectsapp.R;
 import com.restaurant.tracking.githubprojectsapp.eventbus.models.EventPageInfo;
 
 import de.greenrobot.event.EventBus;
-import de.greenrobot.event.Subscribe;
+
 
 public class EventBusDemoActivity extends AppCompatActivity {
     private TextView infoView;
@@ -41,8 +41,6 @@ public class EventBusDemoActivity extends AppCompatActivity {
         EventBus.getDefault().unregister(this);
     }
 
-
-    @Subscribe
     public void onEventMainThread(EventPageInfo item) {
         if (item != null) {
             this.infoView.setText(item.displayName + " " + item.content);

@@ -15,7 +15,7 @@ public class TaskActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // Register
-        EventBus.getDefault().register(this);
+        EventBus.getDefault().registerSticky(this);
     }
 
     @Override
