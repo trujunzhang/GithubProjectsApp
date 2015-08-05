@@ -43,6 +43,11 @@ dependencies {
     //    compile 'com.fasterxml.jackson.core:jackson-databind:2.5.4'
     //    compile 'com.vincentbrison.openlibraries.android:dualcache:2.1.0@jar'
 //    compile project(':smart-location-lib')
+
+    compile 'com.orhanobut:dialogplus:1.10@aar'
+    compile 'de.greenrobot:eventbus:3.0.0-beta1'
+    compile 'com.path:android-priority-jobqueue:1.1.2'
+
     compile project(':squarecamera')
 
 }
