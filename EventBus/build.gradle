@@ -1,0 +1,32 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        minSdkVersion 7
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:22.2.0'
+//    provided 'com.google.android:android:4.1.1.4'
+//    provided 'com.google.android:android-test:4.1.1.4'
+//    provided 'com.google.android:annotations:4.1.1.4'
+//    provided 'com.google.android:support-v4:r7'
+}
