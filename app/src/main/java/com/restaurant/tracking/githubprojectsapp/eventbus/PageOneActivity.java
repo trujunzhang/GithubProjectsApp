@@ -16,21 +16,9 @@ import de.greenrobot.event.Subscribe;
 /**
  * Created by djzhang on 8/5/15.
  */
-public class PageOneActivity extends AppCompatActivity {
+public class PageOneActivity extends TaskActivity {
 
     private TextView textView3;
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        try {
-            EventBus.getDefault().unregister(this);
-        } catch (Throwable t) {
-            //this may crash if registration did not go through. just be safe
-        }
-
-    }
 
 
     @Override
@@ -46,9 +34,6 @@ public class PageOneActivity extends AppCompatActivity {
                 showPageTwo();
             }
         });
-
-        // Register
-        EventBus.getDefault().register(this);
     }
 
     private void showPageTwo() {
