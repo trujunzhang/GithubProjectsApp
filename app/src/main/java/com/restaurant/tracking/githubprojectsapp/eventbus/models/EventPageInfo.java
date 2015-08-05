@@ -9,4 +9,8 @@ public class EventPageInfo {
 
     public String content = "Event bus introduction";
 
+    public EventPageInfo(String displayName, String content) {
+        this.displayName = displayName;
+        this.content = content;
+    }
 }
