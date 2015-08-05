@@ -52,9 +52,9 @@ public class PageOneActivity extends AppCompatActivity {
     }
 
     private void showPageTwo() {
-//        EventBus.getDefault().post(new PostedModelEvent(new EventPageInfo("post", " to djzhang")));
         Intent intent = new Intent(this, PageTwoActivity.class);
         this.startActivity(intent);
+        EventBus.getDefault().post(new PostedModelEvent(new EventPageInfo("post", " to djzhang")));
     }
 
     @Subscribe

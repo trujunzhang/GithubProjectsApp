@@ -36,7 +36,7 @@ public class PageTwoActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        this.setContentView(R.layout.activity_pageone);
+        this.setContentView(R.layout.activity_pagetwo);
 
         this.textView3 = (TextView) findViewById(R.id.textView3);
         this.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
